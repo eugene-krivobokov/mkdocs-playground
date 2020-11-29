@@ -6,7 +6,6 @@ USER_ID=${LOCAL_USER_ID:-1000}
 DOCKER_USER=user
 
 echo "Creating user: $USER_ID"
-adduser --help
 adduser --shell /bin/sh --disabled-password --gecos GECOS --uid "${USER_ID}" ${DOCKER_USER}
 
 # where were errors when created by git itself

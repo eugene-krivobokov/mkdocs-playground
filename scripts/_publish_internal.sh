@@ -13,7 +13,6 @@ removeGhPagesWorktree() {
 git config --global core.sshCommand 'ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no'
 git config --global user.name "$GITHUB_GIT_USER_NAME";
 git config --global user.email "$GITHUB_GIT_USER_EMAIL";
-mkdir -p "${HOME}"/.ssh
 
 echo "Fetching gh-pages branch..."
 # In case of not fetched branch
