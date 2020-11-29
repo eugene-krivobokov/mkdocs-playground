@@ -1,0 +1,8 @@
+.idea/
+*.iml
+local.properties
+.pytest_cache
+.DS_Store
+# Generated files
+site/
+gh-pages/

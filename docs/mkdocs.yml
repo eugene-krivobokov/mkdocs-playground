@@ -1,0 +1,79 @@
+site_name: Sample docs
+site_description: Playground for mkdocs
+repo_url: https://github.com/eugene-krivobokov/mkdocs-playground
+repo_name: mkdocs-playground
+remote_branch: gh-pages
+
+theme:
+  name: material
+  language: en
+  features:
+    - navigation.tabs
+  palette:
+    scheme: preference
+
+plugins:
+  - search:
+      lang:
+        - en
+        - ru
+
+markdown_extensions:
+  - toc:
+      permalink: true
+      toc_depth: 5
+      slugify: !!python/name:pymdownx.slugs.uslugify
+  # https://facelessuser.github.io/pymdown-extensions/
+  - pymdownx.details
+  - pymdownx.tilde
+  - pymdownx.tabbed
+  - pymdownx.smartsymbols
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.escapeall
+  - pymdownx.mark
+  - pymdownx.keys
+  - pymdownx.magiclink:
+      repo_url_shortener: true
+      social_url_shortener: true
+  - pymdownx.snippets:
+      base_path: snippets
+      check_paths: true
+  - pymdownx.superfences:
+      preserve_tabs: true
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_div_format
+  - pymdownx.inlinehilite
+  - pymdownx.emoji:
+      emoji_generator: !!python/name:pymdownx.emoji.to_svg
+
+extra_javascript:
+  - https://unpkg.com/mermaid@8.8.3/dist/mermaid.min.js
+
+extra:
+  social:
+    - icon: fontawesome/brands/twitter
+      link: https://twitter.com/test
+    - icon: fontawesome/brands/telegram
+      link: https://t.me/test
+
+# Use manual nav instead of directories to have a full control of ordering
+nav:
+  - Home:
+      - index.md
+      - Contributing:
+        - Introduction: contributing/index.md
+        - Documentation: contributing/documentation.md
+  - Products:
+      - Overview: products/index.md
+      - Test runner:
+          - Getting started: products/test runner/getting started.md
+          - Configuration: products/test runner/configuration.md
+          - A big section:
+              - Feature: products/test runner/big feature/index.md
+  - Blog:
+      - 2020:
+          - 11:
+              - blog/article.md
